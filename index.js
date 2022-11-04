@@ -7,6 +7,15 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send({
+    slackUsername: "Splashray",
+    backend: true,
+    age: 22,
+    bio: "I'm passionate about building, growing and collaborating with teams"
+  })
+})
+
 app.post('/', (req, res) => {
   const  operation_type = req.body.operation_type
   const  x = req.body.x
